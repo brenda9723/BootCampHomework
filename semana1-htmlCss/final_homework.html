@@ -9,7 +9,10 @@
 
     <style>
         body{
+
+            /* para ir haciendo los estilos se debe empezar primero con los elementos sin clases, estos solo hay que llamarlos sin puntos. Las clases hay que ponerles puntos y luego el nombre de las clases */
             display: block;
+            /* el display bloc es para que el elemento se vaya al centro */
             font-family: Arial, Helvetica, sans-serif;
             background-color: #ffffff;
             
@@ -39,10 +42,11 @@
         }
 
         li{
+        
             text-align: center;
-            list-style-type: none;
+           list-style-type: none; /*para que las listas no tengan los famosos puntos entre otros comunes de las listas */
             border-radius: 10px;
-            transition: all 200ms ease-in-out; 
+            transition: all 200ms ease-in-out;  /* la transicion que se hace cuando el cursor pasa por encima del elemento y se ve suave asi como tambien fluido */
             padding-top: 30px;
             padding-bottom: 30px;
             
@@ -51,6 +55,7 @@
 
         /* #fffbef; */
         li:hover{
+
             background-color: #fffbef;
             opacity: 1;
             color: black;
@@ -58,6 +63,7 @@
  
         }
         button{
+
             display: block;
             border-color: #1a64d6;
             border-style: solid;
@@ -73,6 +79,8 @@
 
         }
         button:hover{
+                        
+            /* el hover es para cambiar de color un elemento o para invertir el color cuando pasas tu cursor encima de este elemento, aca se debe poner el color que se va cambiar cuando el cursor pase por encima y donde se define el elemento se pone el color que se tiene antes de que el cursor se pase por encima del elemento */
             background-color: white;
             color: #1a64d6;
             opacity: 1;
