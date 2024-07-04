@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    
+    <script>
+    // document.querySelector("h1");
+    // ES PARA SELECCIONAR UN elemento o una funcion o una clase de html, por ejemplo si queres mostrar el contenido de un div y buscas dentro para localizar.
+    // Existen los que son solo para mostrar uno o el primero de los elementos que encuentra, en este caso la funcion querySelector() por si sola, tambien esta la que es para encontrar todos los elementos, devuelve una nodelist con el contenido, querySelectorAll()
+
+        let li = document.querySelector("li");
+        let day = document.querySelector(".day");
+        let paragraph = document.querySelector("ul#list p");
+        // Returns the first element (if any) on the page matching the selector.
+        // Returns all elements (if any) on the page matching the selector.
+        let lis = document.querySelectorAll("li");
+        let text = document.querySelectorAll("li#special p");
+        
+
+        // Select the h2 https://www.shecodes.io/
+        // How many students do we have listed on the page? https://shecodes.io/students
+
+        let selectH2 = document.querySelector("h2");
+        // en este caso es sencillo porque simplemente se usa el querySelector de un elemento y busca directamente el h2 luego hay que mostrar la variable en la que esta almacenada.
+
+        selectH2;
+
+        let selectStudents = document.querySelector("div.col-3 span");
+        // en este caso para encontrar el numero debo inspeccionar el elemento y veo que se encuentra en un div que tiene una clase llamada col-3 y dentro de esa clase esta el elemento span que contiene lo que necesito, hay que ir saltando entre elemento mediante el uso de puntos para concatenar.
+        selectStudents;
+
+
+    
+
+        // las funciones son lo mismo que en todos los lenguales, instrucciones que se ejecutan cuando uno les invoca, pueden ser reusadas las veces necesarias.
+        // Existen los que son los event listeners o por su traduccion que seria escuchar eventos, que son funciones que estan en stand by a que suceda determinado evento como apretar el click, para ejecutarse.
+        // Esta ejecucion se realiza cada vez que se realiza la accion que la desencadena nada mas.
+
+        // Create a function askForCountry
+        // From inside the function, ask for the user's country
+        // Alert ‘You speak Portuguese’ if from Brazil or Portugal
+        // Alert ‘Go learn Portuguese!’ otherwise
+        // Call the function
+
+        function askForCountry(){
+            let country = prompt("What country are you from?");
+            let country_upper = country.toUpperCase();
+
+            if(country_upper === "BRAZIL" || country_upper === "PORTUGAL"){
+            alert("You speak Portuguese");
+            }
+            else{
+                alert("Go learn Portuguese!");
+            }
+
+        }
+
+        // invocamos la funcion
+        askForCountry();
+        askForCountry();
+
+
+
+
+
+ 
+    </script>
+   
+
+
+
+
+</body>
+</html>
