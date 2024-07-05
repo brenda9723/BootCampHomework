@@ -11,22 +11,119 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: bisque;
+            background-color: rgba(223, 34, 198, 0.356);
         }
 
+        hr{
+            border: 1;
+            border-style: solid;
+            color: #622b96;
+        }
 
         h1{
             display: block;
-            color: rgb(97, 3, 184);
-            background-color: rgb(32, 28, 28);
+            color: rgb(255, 255, 255);
+            background: linear-gradient(to right, #992bc5, #31005F);
             text-align: center;
+            width: 40%;
+            margin-left: 30%;
+            padding: 0.9%;
+            border-radius: 10px;
+            
 
         }
-    </style>
-    <h1>Homework</h1>
 
+        h2{
+            color: #992bc5;
+            text-align: center;
+        }
+
+        ul{
+            padding: 0%;
+        }
+
+        li{
+            display: block;
+            padding: 0.9%;
+            width: 40%;
+            margin-left: 30%;
+            text-align: center;
+            list-style-type: none;
+            background-color: #b38dc22d;
+            border-radius: 10px;
+        }
+
+        li:hover{
+            background: rgba(236, 86, 236, 0.171);
+            color: black;
+            opacity: 1;
+            transition: all 200ms ease-in-out;
+        }
+
+        button{
+            display: block;
+            background: linear-gradient(to right, #992bc5, #31005F);
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #31005F;
+            padding: 0.9%;
+            margin-left: 45%;
+            width: 10%;
+        }
+
+        button:hover{
+            background: linear-gradient(to right, #ffffff27, #ac92c43f);
+            color: black;
+            opacity: 1;
+            transition: all 200ms ease-in-out;
+        }
+    </style>
+    <h1>🦋SheCodes👩‍💻</h1>
+    <hr>
+    <h2>Access a new career in Technology</h2>
+    <ul>
+        <li>
+            SheCodes Coding Workshopes 💻👷‍♀️
+        </li>
+        <br>
+        <li>
+            SheCodes FreeCodingClass 💻💸
+        </li>
+        <br>
+        <li>
+            SheCodes BootCamp 💻🏕️
+        </li>
+    </ul>
+    <button>Apply</button>
     <script>
-        
+        // After the user clicks on the Apply now button
+        // Ask for the person’s first name
+        // Ask for the person’s age
+        // If 18 or more, change the h1 to  “Hi, {Name}! Welcome to SheCodes !”
+        // Otherwise change the h1 to  “Sorry, {Name}! You cannot join SheCodes ”
+
+        function askUser(){
+            let firstName = prompt("What is your first name");
+            let age = prompt("How old are you?");
+
+            if (age>=18){
+                let element = document.querySelector("h1");
+                element.innerHTML = "Hi, " + firstName + "! Welcome to SheCodes !";
+            }
+            else{
+                let element = document.querySelector("h1");
+                element.innerHTML = "Sorry, " + firstName +  "!  You cannot join SheCodes";
+            }
+
+        }
+
+
+        let elementSelector = document.querySelector("button");
+
+        elementSelector.addEventListener("click", askUser);
+
 
         
     </script>

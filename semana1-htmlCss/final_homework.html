@@ -87,9 +87,22 @@
 
         }
 
-    </style>
+        p{
+            text-align: center;
+            color: #999292;
 
-    <h1>⛅    <br>Currently 21º in Tokyo</h1>
+        }
+
+        .emoji{
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            
+        }
+
+    </style>
+    <div class="emoji"><p>⛅</p></div>
+    <h1>Currently 21º in Tokyo</h1>
     <h2>13º / <strong>23º</strong></h2>
     <ul>
         <li>
@@ -106,6 +119,56 @@
         </li>
     </ul>
     <button>Change city</button>
+
+    <p>Coded by Brenda Britez</p>
+
+
+    
+
+    <script>    
+        
+        function updateH_1(newH_1){
+            let h_1 = document.querySelector("h1");
+            h_1.innerHTML = newH_1;   
+
+        }
+
+
+        function updateEmoji(newEmoji){
+            let emojiOld = document.querySelector("div.emoji p");
+            emojiOld.innerHTML = newEmoji;
+        
+        }
+
+
+        function weather(temperature){
+           return temperature>=1;   
+
+        }
+
+
+        function askWeather(){
+            let city = prompt("Where are you from?");
+            let temperature = prompt("What temperature is it?");
+
+            // le paso por parametro la temperatura que obtuve del usuario a la funcion weather para que me haga el calculo, una cosa importante es que en esta funcion preguntamos para definir la variable
+            if (weather(temperature)){
+                updateH_1(`Currently ${temperature}° in ${city}`);
+                updateEmoji(`😊🦋`);
+
+            }else{
+                updateH_1(`Currently ${temperature}° in ${city}`);
+                updateEmoji(`🥶❄️`);
+            }
+
+        }
+
+        let elementSelector = document.querySelector("button");
+
+        elementSelector.addEventListener("click", askWeather);
+
+
+    </script>
 
 
 

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    
+
     
     <script>
     // document.querySelector("h1");
@@ -65,11 +65,75 @@
         askForCountry();
         askForCountry();
 
+        // ejemplo de event listener
+        function sayHi() {
+        alert("hi");
+        }
+
+        let element = document.querySelector("#city");
+        element.addEventListener("click", sayHi);
+        // para modificar el html con por ejemplo una frase de bienvenida con los datos obtenidos de la funcion
+        let li_= document.querySelector("li");
+        li.innerHTML = "Hello World";
 
 
 
+        // After the user clicks on the Apply now button
+        // Ask for the person’s first name
+        // Ask for the person’s age
+        // If 18 or more, change the h1 to  “Hi, {Name}! Welcome to SheCodes !”
+        // Otherwise change the h1 to  “Sorry, {Name}! You cannot join SheCodes ”
 
- 
+        function askUser(){
+            let firstName = prompt("What is your first name");
+            let age = prompt("How old are you?");
+
+            if (age>=18){
+                let element = document.querySelector("h1");
+                element.innerHTML = "Hi, " + firstName + "! Welcome to SheCodes !";
+            }
+            else{
+                let element = document.querySelector("h1");
+                element.innerHTML = "Sorry, " + firstName +  "!  You cannot join SheCodes";
+            }
+
+        }
+
+
+        let elementSelector = document.querySelector("button");
+
+        elementSelector.addEventListener("click", askUser);
+
+        // hay formas de hacer que este codigo se mas lejible y seria separando en funciones mas chiquitas en caso de que si hubiese algun problema uno ya sabe donde ir a buscar 
+
+        function updateHeading(newHeading){
+            let heading = document.querySelector("h1");
+            heading.innerHTML = newHeading;
+
+            // aca basicamente lo que se hace es buscar con el query selector mi h1 y cambiar por el nuevo que se va pasar como parametro, la funcion lo que retornaria seria el cambio
+        }
+
+        function canApply(){
+            let age = prompt("How old are you?");
+            return age>=18;
+
+            // aca lo que hace basicamente es retornar verdadero cuando el año es mayor o igual a 18, entonces si cuando esa condicion se cumple es verdadero, cuando no se cumple seria falso, por eso no se escribe mas porque la funcion esta implicita en la logica de la programacion con el true o false.
+
+        }
+
+        function apply(){
+            let firstName = prompt("What is your name?");
+
+            if (canApply()){
+                updateHeading(`Hi ${firstName}! Welcome to Shecodes!`);
+
+            }else{
+                updateHeading(`Sorry, ${firstName} You can not be in she codes`);
+            }
+
+            // en esta funcion es basicamente donde pasa a aplicarse todas las demas funciones que estabamos definiendo, en el if llamamos a la fucnion que pregunta por su edad y te retorna un verdadero o falso, si es verdadera vamos a actualizar el h1 a el mensaje que se muestra, y se ve que en la funcion actualizar se esta esperando un parametro que es lo que se le da ahora entre parentesis en esta ultima funcion
+        }
+
     </script>
    
 
