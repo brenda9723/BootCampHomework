@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieCore</title>
+</head>
+
+<style>
+    .black{
+      background-color: rgb(0, 0, 0);
+      color: rgb(181, 195, 207);
+  }
+  body{
+      overflow-x: hidden;
+      background-color: rgba(182, 13, 182, 0.363);
+      color: rgb(44, 2, 2);
+      margin: 0;
+      padding: 0;
+  }
+
+  h1{
+      display: block;
+      align-items: center;
+      background: linear-gradient(to left, #d8218c8c, #b85fa179);
+      width: 50%;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 25%;
+      text-align: center;
+      border-radius: 60px;
+      padding: 0;
+      
+  }
+  header{
+      display: grid;
+      grid-template-columns: repeat(3, 500px);
+      grid-template-rows: auto;
+      border-radius: 20px;
+      background: linear-gradient(to right, #ffffff, rgba(165, 112, 156, 0));
+
+  }
+
+  .content{
+      background: rgba(90, 6, 90, 0.048);
+      width: 50%;
+      margin-left: 24.5%;
+      border-radius: 5px;
+      padding: 10px;
+  }
+
+  .logoImg{
+      display: flex;
+      align-items: center;
+      font-family: Arial Black; 
+      font-weight: bold; 
+      font-size: 30px; 
+      color: #fff; 
+      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+
+  }
+
+
+  .logoImg img{
+      width: 60px;
+      margin-left: 20px;
+
+  }
+
+  .navBar{
+      padding: 15px;
+      align-items: center;
+  }
+
+  .navBar ul{
+      text-align: center;
+      align-items: center;
+      /* background-color: rgb(255, 255, 255); */
+      display: grid;
+      grid-template-columns: repeat(2, 200px);
+      grid-template-rows: auto;
+      gap: 20px;
+  }
+  .navBar li{
+      text-align: center;
+      font-size: large;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      list-style: none;
+      font-weight: bolder;
+  }
+
+  .buttonClass{
+      display: grid;
+      grid-template-rows: min-content;
+      grid-template-columns: repeat(2, 200px);
+      gap: 0.5px;
+  }
+
+  .buttonClass .learnMoreButton button{
+      align-items: center;
+      border-color: rgb(221, 15, 152);
+      background-color: rgb(221, 15, 152);
+      color: rgb(4, 27, 27);
+      border-radius: 20px;
+      box-shadow: rgba(214, 26, 152, 0.137);
+      border-style: solid;
+      transition: all 200ms ease-in-out;
+      padding: 10px;
+      margin: 22px auto;
+  }
+
+  .buttonClass .learnMoreButton button:hover{
+      background-color: rgb(204, 204, 204);
+      color: #90afdf;
+      opacity: 1;
+      border-color: aliceblue;
+
+  }
+  a{
+      text-decoration: none;
+      font-weight: bold;
+
+      
+      
+  }
+
+  .darkMode{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 170px;
+      font-weight: bold;
+          
+  }
+
+  .darMode p{
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      
+  }
+
+
+  input {
+      margin-top: 0;
+      appearance: none;
+      padding: 16px 32px;
+      border-radius: 16px;
+      background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) #ccc -16px;
+      transition: 0.3s ease-in-out;
+  }
+
+      
+  :checked {
+      background-color: rgb(221, 15, 152);
+      background-position: 16px;
+  }
+  
+
+  .imgContainer {
+      display: grid;
+      margin-left: 30%;
+      padding: auto;
+      grid-template-columns: repeat(3, 20%);
+      grid-template-rows: auto
+     
+  }
+
+  .imgContainer img{
+      width: 100%;
+      height: 100%;
+      
+  }
+
+  .imgContainer .firts-img-class{
+      border-radius: 5px;
+      transition: all 150ms ease-in-out;
+  }
+
+  .imgContainer .firts-img-class:hover{
+      filter: contrast(50%);
+      transform: scale(1.2);
+  }
+
+  .imgContainer .second-img-class{
+      border-radius: 5px;
+      transition: all 150ms ease-in-out;
+  }
+
+  .imgContainer .second-img-class:hover{
+      filter: contrast(50%);
+      transform: scale(1.2);
+  }
+
+
+  .imgContainer .third-img-class{
+      border-radius: 5px;
+      transition: all 150ms ease-in-out;
+  }
+
+  .imgContainer .third-img-class:hover{
+      filter: contrast(50%);
+      transform: scale(1.2);
+  }
+
+
+
+  .description{
+      display: flex;
+      text-align: justify;
+      padding: 20px;
+      width: 50%;
+      margin-left: 25%;
+
+  }
+
+  footer{
+      display: block;
+      text-align: center;
+      background-color: rgba(163, 37, 115, 0.199);
+      border-radius: 40px;
+
+
+  }
+
+  .img-grid-classic{
+      display: grid;
+      padding: 20px;
+      grid-template-columns: repeat(3, 20%);
+      grid-template-rows: auto;
+      margin-left: 30%;
+      
+
+  }
+
+  .img-grid-classic img{
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      transition: all 150ms ease-in-out;
+  }
+
+  .img-grid-classic img:hover{
+      filter: contrast(50%);
+      transform: scale(1.2);
+  }
+  
+
+  h3{
+      display: block;
+      background: rgba(121, 2, 121, 0.164);
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      color: rgb(121, 4, 121);
+  }
+
+  .genres-class .p1{
+      display: flex;
+      text-align: justify;
+      padding: 20px;
+      width: 50%;
+      margin-left: 25%;
+      
+      
+  }
+
+  .genres-class .classic-genres{
+      display: flex;
+      text-align: justify;
+      margin-left: 30%;
+  }
+
+  .genres-class .p2{
+      display: flex;
+      text-align: justify;
+      padding: 20px;
+      width: 50%;
+      margin-left: 25%;
+  }
+
+  .genres-class .new-genres{
+      display: flex;
+      text-align: justify;
+      margin-left: 30%;
+  }
+
+  .genres-class .p3{
+      display: flex;
+      text-align: justify;
+      padding: 20px;
+      width: 50%;
+      margin-left: 25%;
+  }
+
+  .dark{
+    background-color: #24011b;
+    color: #fff;
+  }
+
+  .dark .content{
+    background-color: #9b0c6b1a;
+    color: #ffffff;
+  }
+
+
+</style>
+
+<body>
+    
+
+    <header>
+        <div class="logoImg">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWEi5Joqo2vAMNMclNMK9YWXgwx5CT4PfkQ&s" alt="movie_logo"><strong>MovieCorePage</strong>
+        </div>
+
+        <div class="navBar">
+            <ul>
+                <li>Rate movies</li>
+                <li>Best of the year</li>
+            </ul>
+        </div>
+
+        <div class="buttonClass">
+            <div class="learnMoreButton">
+                <button><a href="https://www.imdb.com/chart/top/">Learn more</a></button>
+            </div>
+
+            <div class="darkMode">
+                <p>DarkMode</p>
+                <input type="checkbox" id="#darkModeToggle"> 
+                <!-- poner el id en los elementos te permite mas tarde usar el get element by id en js -->
+            </div>
+            
+        </div>
+    </header> 
+        <h1>
+            <em><strong>Lets talk about movies! </strong></em>🎥🎬💞
+        </h1>  
+    <div class="content">
+
+
+            <div class="imgContainer">
+                <div class="img1">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT8Mj9G4tsKR_traZ-QZFhKEx9BRP6Gj9AiH8Hjm4_86ByxS99T" alt="" class="firts-img-class">
+
+                </div>
+                <div class="img2">
+                    
+                    <img src="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/POSTER-EL-CABALLERO-OSCURO-692x1024.jpg.webp" alt="" class="second-img-class">
+                </div>
+                <div class="img3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDJCIbCC4DQiu4nWZDx4jiYJML9K0vub2Odnmvjy6E8u2IwjS" alt="" class="third-img-class">
+
+                </div>
+            </div>
+                
+            
+
+            <div class="description">
+                The history of film chronicles the development of a visual art form created using film technologies that began in the late 19th century.
+                The advent of film as an artistic medium is not clearly defined. There were earlier cinematographic screenings by others, however, the commercial, public screening of ten Lumière brothers' short films in Paris on 28 December 1895, can be regarded as the breakthrough of projected cinematographic motion pictures. The earliest films were in black and white, under a minute long, without recorded sound, and consisted of a single shot from a steady camera. The first decade saw film move from a novelty, to an established mass entertainment industry, with film production companies and studios established throughout the world. Conventions toward a general cinematic language developed, with film editing, camera movements and other cinematic techniques contributing specific roles in the narrative of films.  
+            </div>
+            
+
+            <h3>Lets explore in differents movie genres</h3>
+
+            <div class="img-grid-classic">
+                <div class="img1">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRw5wDPgGZqeqrR_78cYiuc7po8bIyF1vzhYiBHyPXaOSJ1BUbS" alt="" class="firts-img-class">
+
+                </div>
+                <div class="img2">
+                    
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSgFYC7RewKQ0KqX6CV9NBy2cMPsWgFm_9_qToNlsPqHV_GBX2n" alt="" class="second-img-class">
+                </div>
+                <div class="img3">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRguTuOQ7hyYt9b5dS2Vn7AY-U0Lkr9zGPC_D-VyvrlgZQvn8l6" alt="" class="third-img-class">
+
+                </div>
+            </div>
+
+
+            <div class="genres-class">
+                <div class="p1">
+                    <p>In the early days of cinema, genres were much more uniform and defined. Just as they were in literature and other forms of art and entertainment, people would go to the theater to watch a war film, a musical, or a comedy. The basic genres were well defined and included some of the following:</p>
+                </div>
+                <div class="classic-genres">
+                    <ul>
+                        <li>Action</li>
+                        <li>Comedy</li>
+                        <li>Drama</li>
+                        <li>Fantasy</li>
+                        <li>Horror</li>
+                        <li>Mystery</li>
+                        <li>Romance</li>
+                        <li>Thriller</li>
+                        <li>Western</li>
+                    </ul>
+                </div>
+                
+                <div class="p2">
+                    <p>From there, you could dive a bit deeper. Sub-genres gave names and classifications to certain types of films within each genre. The “thriller” genre, for example, had the following sub-genres:</p>
+                </div> 
+                    
+                <div class="new-genres">
+                    <ul>
+                        <li>Crime thriller</li>
+                        <li>Disaster thriller</li>
+                        <li>Psychological thriller</li>
+                        <li>Techno thriller</li>
+                    </ul>
+                </div>
+                
+                <div class="p3">
+                    <p> However, before we go over how to mix and match film genres, let’s go over some of the biggest and most notable.</p>  
+                </div>
+                
+            </div>
+
+            
+    </div>
+    <footer>
+        Coded by Brenda 
+    </footer>
+
+    <script>
+
+        function changeTheme(){
+
+            // to change back to light theme, ask if it is black now
+            // if(body.classList.contains("dark")){
+            //     body.classList.remove("dark");
+            // }
+            // else{
+            //     body.classList.add("dark");
+            // }
+            // -----------------------------------------------
+            let body = document.querySelector("body");
+            body.classList.toggle("dark");
+            // the toggle is the same, if it is there it will run remove and if it is not is going to add it
+        }
+
+
+        let darkChange = document.getElementById("#darkModeToggle");  
+        // calling my class by the id, do not forget to change the selector 
+        darkChange.addEventListener("change", changeTheme);     
+
+    </script>
+
+
+</body>
+</html>
+
